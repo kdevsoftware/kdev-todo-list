@@ -22,14 +22,14 @@ class TodoList extends Component {
     return (
       <div>
         <div>
-          {this.renderForm()}
-          {this.renderToDo()}
-        </div>
-
-        <div>
           <button onClick={() => this.setState({ showForm: !showForm })}>
             {showForm ? <i>-</i> : <i>+</i>}
           </button>
+        </div>
+
+        <div>
+          {this.renderForm()}
+          {this.renderToDo()}
         </div>
       </div>
     );
