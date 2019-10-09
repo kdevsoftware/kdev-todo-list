@@ -1,21 +1,35 @@
 import React, { Component } from 'react';
+import Tabs from 'react-responsive-tabs';
+import 'react-responsive-tabs/styles.css';
+import './index.scss';
 
 import TodoList from '../../components/todo-list';
 import { HOME, OFFICE } from '../../store/constant';
 
+const tabsContent = [
+  {
+    title: 'HOME',
+    content: <TodoList place={HOME} />
+  },
+  {
+    title: 'OFFICE',
+    content: <TodoList place={OFFICE} />
+  }
+];
+
+function getTabs() {
+  return tabsContent.map((tab, index) => ({
+    title: tab.title,
+    getContent: () => tab.content,
+    key: index
+  }));
+}
+
 class AppMain extends Component {
   render() {
     return (
-      <div class="d-flex justify-content-between">
-        <div class="d-flex flex-column">
-          <h1>Home</h1>
-          <TodoList place={HOME} />
-        </div>
-
-        <div class="d-flex flex-column">
-          <h1>Office</h1>
-          <TodoList place={OFFICE} />
-        </div>
+      <div className="container my-4 pb-5 main-section">
+        <Tabs transform={false} showInkBar={true} items={getTabs()} />
       </div>
     );
   }
