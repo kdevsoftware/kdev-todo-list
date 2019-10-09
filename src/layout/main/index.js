@@ -28,7 +28,7 @@ function getTabs() {
 class AppMain extends Component {
   render() {
     return (
-      <div className="container mt-4 main-section">
+      <div className="container my-4 pb-5 main-section">
         <Tabs transform={false} showInkBar={true} items={getTabs()} />
       </div>
     );

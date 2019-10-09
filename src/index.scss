@@ -9,8 +9,11 @@ body {
   margin: 0;
   font-family: 'Market';
   font-size: 1.2rem;
+  color: #808080;
+  background: #f1f4f6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: overlay;
 }
 
 code {

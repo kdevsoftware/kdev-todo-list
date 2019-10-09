@@ -20,17 +20,17 @@ class TodoList extends Component {
     const { showForm } = this.state;
 
     return (
-      <div>
-        <div>
-          <button onClick={() => this.setState({ showForm: !showForm })}>
-            {showForm ? <i>-</i> : <i>+</i>}
-          </button>
-        </div>
+      <div className="position-relative mt-4">
+        <button
+          className="btn btn-outline-primary mb-5"
+          style={{minWidth: '100px'}}
+          onClick={() => this.setState({ showForm: !showForm })}
+        >
+          {showForm ? <i>Close</i> : <i>Add Item</i>}
+        </button>
 
-        <div>
-          {this.renderForm()}
-          {this.renderToDo()}
-        </div>
+        {this.renderForm()}
+        {this.renderToDo()}
       </div>
     );
   }
@@ -42,14 +42,14 @@ class TodoList extends Component {
       return (
         <div>
           <form onSubmit={this.formSubmit}>
-            <div>
+            <div className="position-absolute d-flex" style={{top: 0, right: 0, width: 'calc(100% - 120px)'}}>
               <input
+                type="text"
+                className="form-control"
+                placeholder="What should I do?"
                 value={formValue}
                 onChange={this.inputChange}
-                id="toDoNext"
-                type="text"
               />
-              <label htmlFor="toDoNext">What Next?</label>
             </div>
           </form>
         </div>
@@ -72,7 +72,7 @@ class TodoList extends Component {
 
     return (
       <div>
-        <h1>You have no more things to do!</h1>
+        <h3 className="text-center">No more things to do ...</h3>
       </div>
     );
   }

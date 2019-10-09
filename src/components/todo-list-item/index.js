@@ -8,15 +8,15 @@ class TodoListItem extends Component {
     const { todoId, todo } = this.props;
 
     return (
-      <div className="card text-white bg-dark mb-3" key="toDoName">
+      <div className="shadow-sm card mb-3" key="toDoName">
         <div className="card-body">
           <p className="card-text">{todo.title}</p>
         </div>
 
-        <div className="card-footer text-center">
+        <div className="card-footer text-right">
           <button
             type="button"
-            className="btn btn-primary"
+            className="btn btn-outline-success"
             onClick={() => this.completeClick(todoId)}
           >
             Done
