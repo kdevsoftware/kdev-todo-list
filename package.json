@@ -2,9 +2,11 @@
   "name": "kdev-todo-list",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://kdevsoftware.github.io/kdev-todo-list",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "firebase": "^7.1.0",
+    "gh-pages": "^2.1.1",
     "lodash": "^4.17.15",
     "node-sass": "^4.12.0",
     "react": "^16.10.2",
@@ -19,6 +21,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
