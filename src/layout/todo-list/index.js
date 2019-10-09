@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react';
 
+import TodoListItem from './todo-list-item';
+
 class TodoList extends Component {
   state = {
     showForm: false,
@@ -15,7 +17,10 @@ class TodoList extends Component {
 
     return (
       <div>
-        <div>{this.renderForm()}</div>
+        <div>
+          {this.renderForm()}
+          {this.renderToDo()}
+        </div>
 
         <div>
           <button onClick={() => this.setState({ showForm: !showForm })}>
@@ -47,6 +52,40 @@ class TodoList extends Component {
       );
     }
   };
+
+  renderToDo() {
+    const data = {
+      home: [
+        { value: 'todo - 1' },
+        { value: 'todo - 2' },
+        { value: 'todo - 3' }
+      ],
+      office: [
+        { value: 'todo - 1' },
+        { value: 'todo - 2' },
+        { value: 'todo - 3' },
+        { value: 'todo - 4' },
+        { value: 'todo - 5' },
+        { value: 'todo - 6' }
+      ]
+    };
+
+    let todoRef = data['office'];
+
+    const toDos = todoRef.map(todoItem => {
+      return <TodoListItem />;
+    });
+
+    if (todoRef.length) {
+      return toDos;
+    }
+
+    return (
+      <div>
+        <h1>You have no more things to do!</h1>
+      </div>
+    );
+  }
 }
 
 export default TodoList;
