@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import _ from 'lodash';
 
 import TodoListItem from '../todo-list-item';
+import * as actions from '../../store/action';
 
 class TodoList extends Component {
   state = {
@@ -8,9 +11,10 @@ class TodoList extends Component {
     formValue: ''
   };
 
-  inputChange = event => {
-    this.setState({ formValue: event.target.value });
-  };
+  componentWillMount() {
+    const { place } = this.props;
+    this.props.fetchToDos(place);
+  }
 
   render() {
     const { showForm } = this.state;
@@ -54,29 +58,15 @@ class TodoList extends Component {
   };
 
   renderToDo() {
-    const data = {
-      home: [
-        { value: 'todo - 1' },
-        { value: 'todo - 2' },
-        { value: 'todo - 3' }
-      ],
-      office: [
-        { value: 'todo - 1' },
-        { value: 'todo - 2' },
-        { value: 'todo - 3' },
-        { value: 'todo - 4' },
-        { value: 'todo - 5' },
-        { value: 'todo - 6' }
-      ]
-    };
+    const { data, place } = this.props;
 
-    let todoRef = data['office'];
+    let todoRef = data[place];
 
-    const toDos = todoRef.map(todoItem => {
-      return <TodoListItem />;
+    const toDos = _.map(todoRef, (value, key) => {
+      return <TodoListItem key={key} place={place} todoId={key} todo={value} />;
     });
 
-    if (todoRef.length) {
+    if (!_.isEmpty(toDos)) {
       return toDos;
     }
 
@@ -86,6 +76,30 @@ class TodoList extends Component {
       </div>
     );
   }
+
+  inputChange = event => {
+    this.setState({ formValue: event.target.value });
+  };
+
+  formSubmit = event => {
+    const { formValue } = this.state;
+    const { place, addToDo } = this.props;
+
+    event.preventDefault();
+
+    addToDo(place, { title: formValue });
+
+    this.setState({ formValue: '' });
+  };
 }
 
-export default TodoList;
+const mapStateToProps = ({ data }) => {
+  return {
+    data
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  actions
+)(TodoList);

@@ -1,4 +1,4 @@
-import { todosRefAtHome, todosRefAtOffice } from '../config/firebase';
+import { todosRefAtHome, todosRefAtOffice } from '../../config/firebase';
 import { HOME, FETCH_TODOS } from '../constant';
 
 export const addToDo = (place, newToDo) => async dispatch => {
