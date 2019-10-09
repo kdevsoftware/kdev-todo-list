@@ -8,7 +8,17 @@ class App extends Component {
     return (
       <Fragment>
         <AppHeader />
-        <TodoList />
+
+        <div class="d-flex justify-content-between">
+          <div class="d-flex flex-column">
+            <TodoList />
+          </div>
+
+          <div class="d-flex flex-column">
+            <TodoList />
+          </div>
+        </div>
+
         <AppFooter />
       </Fragment>
     );
