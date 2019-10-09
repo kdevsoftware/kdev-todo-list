@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Tabs from 'react-responsive-tabs';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import 'react-responsive-tabs/styles.css';
 import './index.scss';
 
@@ -28,9 +29,17 @@ function getTabs() {
 class AppMain extends Component {
   render() {
     return (
-      <div className="container my-4 pb-5 main-section">
-        <Tabs transform={false} showInkBar={true} items={getTabs()} />
-      </div>
+      <ReactCSSTransitionGroup
+        transitionName="TabsAnimation"
+        transitionAppear={true}
+        transitionAppearTimeout={0}
+        transitionEnter={false}
+        transitionLeave={false}
+      >
+        <div className="container my-4 pb-5 main-section">
+          <Tabs transform={false} showInkBar={true} items={getTabs()} />
+        </div>
+      </ReactCSSTransitionGroup>
     );
   }
 }

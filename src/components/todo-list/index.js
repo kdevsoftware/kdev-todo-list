@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import TodoListItem from '../todo-list-item';
 import * as actions from '../../store/action';
@@ -20,18 +21,26 @@ class TodoList extends Component {
     const { showForm } = this.state;
 
     return (
-      <div className="position-relative mt-4">
-        <button
-          className="btn btn-outline-primary mb-5"
-          style={{minWidth: '100px'}}
-          onClick={() => this.setState({ showForm: !showForm })}
-        >
-          {showForm ? <i>Close</i> : <i>Add Item</i>}
-        </button>
+      <ReactCSSTransitionGroup
+        transitionName="TabsAnimation"
+        transitionAppear={true}
+        transitionAppearTimeout={0}
+        transitionEnter={false}
+        transitionLeave={false}
+      >
+        <div className="position-relative mt-4">
+          <button
+            className="btn btn-outline-primary mb-5"
+            style={{ minWidth: '100px' }}
+            onClick={() => this.setState({ showForm: !showForm })}
+          >
+            {showForm ? <i>Close</i> : <i>Add Item</i>}
+          </button>
 
-        {this.renderForm()}
-        {this.renderToDo()}
-      </div>
+          {this.renderForm()}
+          {this.renderToDo()}
+        </div>
+      </ReactCSSTransitionGroup>
     );
   }
 
@@ -40,19 +49,30 @@ class TodoList extends Component {
 
     if (showForm) {
       return (
-        <div>
-          <form onSubmit={this.formSubmit}>
-            <div className="position-absolute d-flex" style={{top: 0, right: 0, width: 'calc(100% - 120px)'}}>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="What should I do?"
-                value={formValue}
-                onChange={this.inputChange}
-              />
-            </div>
-          </form>
-        </div>
+        <ReactCSSTransitionGroup
+          transitionName="FormAnimation"
+          transitionAppear={true}
+          transitionAppearTimeout={0}
+          transitionEnter={false}
+          transitionLeave={false}
+        >
+          <div>
+            <form onSubmit={this.formSubmit}>
+              <div
+                className="position-absolute d-flex"
+                style={{ top: 0, right: 0, width: 'calc(100% - 120px)' }}
+              >
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="What should I do?"
+                  value={formValue}
+                  onChange={this.inputChange}
+                />
+              </div>
+            </form>
+          </div>
+        </ReactCSSTransitionGroup>
       );
     }
   };
