@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/kdev-todo-list/static/css/main.44ed42bc.chunk.css",
-    "main.js": "/kdev-todo-list/static/js/main.fedccdce.chunk.js",
-    "main.js.map": "/kdev-todo-list/static/js/main.fedccdce.chunk.js.map",
+    "main.js": "/kdev-todo-list/static/js/main.579b6253.chunk.js",
+    "main.js.map": "/kdev-todo-list/static/js/main.579b6253.chunk.js.map",
     "runtime-main.js": "/kdev-todo-list/static/js/runtime-main.6c6983e0.js",
     "runtime-main.js.map": "/kdev-todo-list/static/js/runtime-main.6c6983e0.js.map",
     "static/css/2.20ca5fd7.chunk.css": "/kdev-todo-list/static/css/2.20ca5fd7.chunk.css",
     "static/js/2.e90b2864.chunk.js": "/kdev-todo-list/static/js/2.e90b2864.chunk.js",
     "static/js/2.e90b2864.chunk.js.map": "/kdev-todo-list/static/js/2.e90b2864.chunk.js.map",
     "index.html": "/kdev-todo-list/index.html",
-    "precache-manifest.471d54da1c65431dc6964a85892a729e.js": "/kdev-todo-list/precache-manifest.471d54da1c65431dc6964a85892a729e.js",
+    "precache-manifest.f72764e9dadeb1a7bcd1fa785f3df492.js": "/kdev-todo-list/precache-manifest.f72764e9dadeb1a7bcd1fa785f3df492.js",
     "service-worker.js": "/kdev-todo-list/service-worker.js",
     "static/css/2.20ca5fd7.chunk.css.map": "/kdev-todo-list/static/css/2.20ca5fd7.chunk.css.map",
     "static/css/main.44ed42bc.chunk.css.map": "/kdev-todo-list/static/css/main.44ed42bc.chunk.css.map",
@@ -21,6 +21,6 @@
     "static/css/2.20ca5fd7.chunk.css",
     "static/js/2.e90b2864.chunk.js",
     "static/css/main.44ed42bc.chunk.css",
-    "static/js/main.fedccdce.chunk.js"
+    "static/js/main.579b6253.chunk.js"
   ]
 }

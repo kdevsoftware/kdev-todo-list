@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "efce0d13bea16e69e5ed2c6be45ee9ed",
+    "revision": "cd8aafcdc0ba56821e8b5e18793c22fc",
     "url": "/kdev-todo-list/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/kdev-todo-list/static/css/2.20ca5fd7.chunk.css"
   },
   {
-    "revision": "ca53a2a4b0c1ccf956bf",
+    "revision": "dcf79f4b03253757836b",
     "url": "/kdev-todo-list/static/css/main.44ed42bc.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/kdev-todo-list/static/js/2.e90b2864.chunk.js"
   },
   {
-    "revision": "ca53a2a4b0c1ccf956bf",
-    "url": "/kdev-todo-list/static/js/main.fedccdce.chunk.js"
+    "revision": "dcf79f4b03253757836b",
+    "url": "/kdev-todo-list/static/js/main.579b6253.chunk.js"
   },
   {
     "revision": "86e805da2cca2d2dbb31",
