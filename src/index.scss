@@ -30,3 +30,13 @@ code {
   transform: translateY(0);
   transition: all 0.3s linear;
 }
+
+.TabsAnimation-appear {
+  transform: translateY(30px);
+  opacity: 0;
+}
+.TabsAnimation-appear.TabsAnimation-appear-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s linear;
+}
