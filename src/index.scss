@@ -20,3 +20,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.HeaderAnimation-appear {
+  transform: translateY(-30px);
+  opacity: 0;
+}
+.HeaderAnimation-appear.HeaderAnimation-appear-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s linear;
+}
