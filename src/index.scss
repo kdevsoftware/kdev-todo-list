@@ -40,3 +40,11 @@ code {
   transform: translateY(0);
   transition: all 0.3s linear;
 }
+
+.FormAnimation-appear {
+  opacity: 0;
+}
+.FormAnimation-appear.FormAnimation-appear-active {
+  opacity: 1;
+  transition: all 0.3s linear;
+}

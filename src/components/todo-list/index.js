@@ -49,22 +49,30 @@ class TodoList extends Component {
 
     if (showForm) {
       return (
-        <div>
-          <form onSubmit={this.formSubmit}>
-            <div
-              className="position-absolute d-flex"
-              style={{ top: 0, right: 0, width: 'calc(100% - 120px)' }}
-            >
-              <input
-                type="text"
-                className="form-control"
-                placeholder="What should I do?"
-                value={formValue}
-                onChange={this.inputChange}
-              />
-            </div>
-          </form>
-        </div>
+        <ReactCSSTransitionGroup
+          transitionName="FormAnimation"
+          transitionAppear={true}
+          transitionAppearTimeout={0}
+          transitionEnter={false}
+          transitionLeave={false}
+        >
+          <div>
+            <form onSubmit={this.formSubmit}>
+              <div
+                className="position-absolute d-flex"
+                style={{ top: 0, right: 0, width: 'calc(100% - 120px)' }}
+              >
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="What should I do?"
+                  value={formValue}
+                  onChange={this.inputChange}
+                />
+              </div>
+            </form>
+          </div>
+        </ReactCSSTransitionGroup>
       );
     }
   };
